@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Field from './_field'
 
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "" };
+		this.state = { username: "", password: "", passwordCheck: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -51,6 +52,16 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
+		let signUpOptions;
+		if (this.props.formType === 'signup') {
+			signUpOptions =
+			<div className="login-form">
+				<label> Retype Password:
+					<Field type='password' field='passwordCheck' value={this.state.passwordCheck} update={this.update.bind(this)}/>
+				</label>
+			</div>
+		}
+
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
@@ -58,24 +69,21 @@ class SessionForm extends React.Component {
 					<br/>
 					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
+
 					<div className="login-form">
-						<br/>
 						<label> Username:
-							<input type="text"
-								value={this.state.username}
-								onChange={this.update("username")}
-								className="login-input" />
+							<Field type='text' field='username' value={this.state.username} update={this.update.bind(this)}/>
 						</label>
-						<br/>
-						<label> Password:
-							<input type="password"
-								value={this.state.password}
-								onChange={this.update("password")}
-								className="login-input" />
-						</label>
-						<br/>
-						<input type="submit" value="Submit" />
 					</div>
+
+					<div className="login-form">
+						<label> Password:
+							<Field type='password' field='password' value={this.state.password} update={this.update.bind(this)}/>
+						</label>
+					</div>
+
+					{ signUpOptions }
+					<input type="submit" value="Submit" />
 				</form>
 			</div>
 		);
