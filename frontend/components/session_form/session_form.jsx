@@ -5,7 +5,7 @@ import Field from './_field'
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "", passwordCheck: "" };
+		this.state = { username: "", password: "", passwordCheck: "", errors: [] };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -27,8 +27,25 @@ class SessionForm extends React.Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
+		if (this.handleFrontEndErrors()) {
+			return;
+		}
 		const user = this.state;
 		this.props.processForm({user});
+	}
+
+	handleFrontEndErrors() {
+		let errors = [];
+		if (this.state.password.length < 6) {
+			errors.push("The Password must be at least 6 characters long.");
+		}
+		if (this.props.formType === "signup" && this.state.password !== this.state.passwordCheck) {
+			errors.push("Passwords don't match.");
+		}
+
+		this.setState({errors: errors});
+
+		return errors.length != 0;
 	}
 
 	navLink() {
@@ -42,7 +59,7 @@ class SessionForm extends React.Component {
 	renderErrors() {
 		return(
 			<ul>
-				{this.props.errors.map((error, i) => (
+				{this.props.errors.concat(this.state.errors).map((error, i) => (
 					<li key={`error-${i}`}>
 						{error}
 					</li>
