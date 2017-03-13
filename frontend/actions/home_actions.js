@@ -1,10 +1,10 @@
-import * as APIUtil from '../util/session_api_util'
+import * as APIUtil from '../util/home_api_util'
 
 export const RECEIVE_HOMES = "RECIEVE HOMES";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 
-export const createHome = homes => dispatch (
+export const createHome = home => dispatch => (
   APIUtil.createHome(home)
     .then (
       homes => dispatch(recieveCurrentHomes()),
@@ -18,6 +18,6 @@ export const recieveCurrentHomes = home => ({
 });
 
 export const recieveErrors = errors => ({
-  type: RECEIVE_ERRORS.
+  type: RECEIVE_ERRORS,
   errors
 });

@@ -4,7 +4,7 @@ export const createHome = (home) => {
   return $.ajax({
     method: 'POST',
     url: 'api/home',
-    data: 'home',
+    data: home,
   });
 };
 

@@ -10,7 +10,7 @@ class Api::HomesController < ApplicationController
     if @home.save
       render "api/homes/show"
     else
-      render json: @home.errors.full_messages, status 422
+      render json: @home.errors.full_messages, status: 422
     end
   end
 
@@ -22,7 +22,7 @@ class Api::HomesController < ApplicationController
 
   private
   def home_params
-    params.require(:home).permit(:name, :adress)
+    params.require(:home).permit(:name, :address)
   end
 
 end

@@ -5,7 +5,12 @@ import Field from './_field'
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "", passwordCheck: "", errors: [] };
+		this.state = {
+			username: "",
+			password: "",
+			passwordCheck: "",
+			errors: []
+		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
