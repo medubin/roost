@@ -6,12 +6,18 @@ class Api::HomesController < ApplicationController
 
   def create
     @home = Home.new(home_params)
-
-    if @home.save
-      render "api/homes/show"
-    else
+    if !@home.save
       render json: @home.errors.full_messages, status: 422
+      return
     end
+
+    @housemate = Housemate.new(user_id: current_user.id, admin: true, home_id: @home.id)
+    if !@housemate.save
+      render json: @housemate.errors.full_messages, status: 422
+      return
+    end
+    
+    render "api/homes/show"
   end
 
   def show
