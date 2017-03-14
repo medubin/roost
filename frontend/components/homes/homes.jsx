@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import HomeForm from './home_form';
+
 
 class Homes extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Homes extends React.Component {
 
   render() {
     return <div>
-      <HomeForm/>
+
     </div>
   }
 }

@@ -1,6 +1,10 @@
 class Api::HomesController < ApplicationController
   def index
-    @homes = Home.all
+    if !current_user
+      render json: "Must be logged in", status: 422
+      return
+    end
+    @homes = current_user.homes
     render "api/homes/index"
   end
 
@@ -11,12 +15,16 @@ class Api::HomesController < ApplicationController
       return
     end
 
-    @housemate = Housemate.new(user_id: current_user.id, admin: true, home_id: @home.id)
+    @housemate = Housemate.new(
+      user_id: current_user.id,
+      admin: true,
+      home_id: @home.id
+    )
     if !@housemate.save
       render json: @housemate.errors.full_messages, status: 422
       return
     end
-    
+
     render "api/homes/show"
   end
 

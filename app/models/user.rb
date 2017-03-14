@@ -10,8 +10,7 @@ class User < ApplicationRecord
   has_many :housemates
 
   has_many :homes,
-  through: :housemates,
-  source: :homes
+  through: :housemates
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

@@ -3,14 +3,14 @@ import { recieveCurrentHomes, receiveErrors } from '../actions/home_actions'
 export const createHome = (home) => {
   return $.ajax({
     method: 'POST',
-    url: 'api/home',
+    url: 'api/homes',
     data: home,
   });
 };
 
-export const showHomes = () => {
+export const fetchHomes = () => {
   return $.ajax ({
     method: 'GET',
-    url: 'api/home'
+    url: 'api/homes'
   });
 };

@@ -4,9 +4,7 @@ class Home < ApplicationRecord
   has_many :housemates
 
   has_many :users,
-  through: :housemates,
-  source: :user
-
+  through: :housemates
 
 
 end
