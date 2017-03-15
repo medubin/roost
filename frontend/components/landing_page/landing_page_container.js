@@ -5,6 +5,7 @@ const mapStateToProps = ({ }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  // showHomes: homes => dispatch()
 });
 
 export default connect(

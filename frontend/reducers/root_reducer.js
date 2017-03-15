@@ -5,7 +5,7 @@ import HomeReducer from './home_reducer'
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  home: HomeReducer
+  homes: HomeReducer
 
 });
 

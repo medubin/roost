@@ -1,10 +1,10 @@
-import { recieveCurrentHomes, receiveErrors } from '../actions/home_actions'
+import { receiveCurrentHomes, receiveErrors } from '../actions/home_actions'
 
 export const createHome = (home) => {
   return $.ajax({
     method: 'POST',
     url: 'api/homes',
-    data: home,
+    data: home
   });
 };
 

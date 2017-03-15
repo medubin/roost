@@ -8,6 +8,7 @@ const mapStateToProps = ({ home }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     createHome: home => dispatch(createHome(home))
+
 });
 
 export default connect(

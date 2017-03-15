@@ -9,6 +9,7 @@ import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import LandingPageContainer from './landing_page/landing_page_container'
 import HomeFormContainer from './homes/home_form_container'
+import HomesIndexContainer from './homes/homes_index_container'
 
 
 const Root = ({ store }) => {
@@ -31,10 +32,11 @@ const Root = ({ store }) => {
     <Provider store={store}>
        <Router history={hashHistory}>
          <Route path="/" component={App}>
-           <IndexRoute component={LandingPageContainer} />
+           <IndexRoute component={LandingPageContainer} onEnter={_ensureLoggedIn} />
            <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
            <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
            <Route path="/create-home" component={HomeFormContainer} onEnter={_ensureLoggedIn} />
+           <Route path="/homes" component={HomesIndexContainer} onEnter={_ensureLoggedIn} />
          </Route>
        </Router>
      </Provider>
