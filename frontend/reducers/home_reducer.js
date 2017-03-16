@@ -11,7 +11,7 @@ const HomeReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_HOMES:
-      newState.homes = action.homes['array'];
+      newState.homes = action.homes;
       return newState;
 
 

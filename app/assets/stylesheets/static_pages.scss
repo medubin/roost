@@ -3,7 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+$primary-color: #A239CA;
+$seconday-color: #4717F6;
+$primary-accent: #E7D4DD;
+$secondy-accent: #062F4F;
+
 * {
   border-style: solid;
   border-width: 1px;
+}
+
+.header-group {
+  color: $primary-color;
 }
