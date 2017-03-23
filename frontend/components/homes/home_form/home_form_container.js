@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import HomeForm from './home_form';
-import {createHome} from '../../actions/home_actions'
+import {createHome} from '../../../actions/home_actions'
 
-const mapStateToProps = ({ home }) => ({
-  errors: home.errors
+const mapStateToProps = ({ homes }) => ({
+  errors: homes.errors
 });
 
 const mapDispatchToProps = (dispatch) => ({

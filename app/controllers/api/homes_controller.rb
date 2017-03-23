@@ -29,7 +29,7 @@ class Api::HomesController < ApplicationController
   end
 
   def show
-    @homes = Home.find(params[:id])
+    @home = Home.includes(:users, :housemates).find(params[:id])
     render "api/homes/show"
   end
 

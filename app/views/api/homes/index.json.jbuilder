@@ -3,4 +3,4 @@
 # end
 #
 
-json.array! @homes, :name, :address
+json.array! @homes, :id, :name, :address

@@ -2,6 +2,7 @@ import * as APIUtil from '../util/home_api_util';
 
 export const RECEIVE_HOMES = "RECEIVE_HOMES";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_ACTIVE_HOME = "RECEIVE_ACTIVE_HOME"
 
 
 export const createHome = home => dispatch => (

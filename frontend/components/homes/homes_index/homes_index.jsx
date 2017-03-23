@@ -18,13 +18,16 @@ class HomesIndex extends React.Component {
     let homes = [];
     for(let key in this.props.homes) {
       homes.push(
-        <li key={key}>{this.props.homes[key].name}</li>
+        <li key={key}>
+          <Link to={ `/homes/${this.props.homes[key].id}` }>
+            {this.props.homes[key].name}
+          </Link>
+        </li>
       );
     }
 
     return <ul>{homes}</ul>
   }
-
 
 
   render() {
