@@ -19,7 +19,7 @@ export const fetchHomes = () => dispatch => {
 
   export const fetchActiveHome = (id) => dispatch => (
     APIUtil.fetchActiveHome(id)
-    .then(activeHome => dispatch(recieveActiveHome))
+    .then(activeHome => dispatch(receiveActiveHome))
   );
 
 
