@@ -18,6 +18,6 @@ export const fetchHomes = () => {
 export const fetchActiveHome = (id) => {
   return $.ajax ({
     method: 'GET',
-    url: "api/homes/${id}"
+    url: 'api/homes/' + id
   });
 };
