@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import HomeShow from './home_show';
+import {fetchActiveHome} from '../../../actions/home_actions'
 // import {createHome} from '../../../actions/home_actions'
 
 const mapStateToProps = ({ homes }) => ({
-  // errors: homes.errors
+  // errors: homes
+  activeHome: homes.activeHome
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    // createHome: home => dispatch(createHome(home))
+    fetchActiveHome: id => dispatch(fetchActiveHome(id))
 
 });
 

@@ -12,17 +12,25 @@ export const createHome = home => dispatch => (
       err  => dispatch(receiveErrors(err.responseJSON)))
   );
 
-
-
 export const fetchHomes = () => dispatch => {
      APIUtil.fetchHomes()
     .then(homes => dispatch(receiveHomes(homes)))
   };
 
+  export const fetchActiveHome = (id) => dispatch => (
+    APIUtil.fetchActiveHome(id)
+    .then(activeHome => dispatch(recieveActiveHome))
+  );
+
 
 export const receiveHomes = (homes) => ({
       type: RECEIVE_HOMES,
       homes
+  });
+
+  export const receiveActiveHome = (activeHome) => ({
+    type: RECEIVE_ACTIVE_HOME,
+    activeHome
   });
 
 

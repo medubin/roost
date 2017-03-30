@@ -10,8 +10,6 @@ const mapDispatchToProps = (dispatch) => ({
   fetchHomes: () => dispatch(fetchHomes())
 });
 
-
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

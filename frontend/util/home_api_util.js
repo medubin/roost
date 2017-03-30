@@ -1,4 +1,4 @@
-import { receiveCurrentHomes, receiveErrors } from '../actions/home_actions'
+// import { receiveCurrentHomes, receiveErrors } from '../actions/home_actions'
 
 export const createHome = (home) => {
   return $.ajax({
@@ -12,5 +12,12 @@ export const fetchHomes = () => {
   return $.ajax ({
     method: 'GET',
     url: 'api/homes'
+  });
+};
+
+export const fetchActiveHome = (id) => {
+  return $.ajax ({
+    method: 'GET',
+    url: "api/homes/${id}"
   });
 };

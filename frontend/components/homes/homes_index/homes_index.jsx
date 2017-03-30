@@ -14,6 +14,7 @@ class HomesIndex extends React.Component {
     this.props.fetchHomes();
   }
 
+
   populateHomes() {
     let homes = [];
     for(let key in this.props.homes) {
