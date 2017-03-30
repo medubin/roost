@@ -15,8 +15,8 @@ const HomeReducer = (state = _defaultState, action) => {
       newState.homes = action.homes;
       return newState;
     case RECEIVE_ACTIVE_HOME:
-      newState.activeHome = action.activeHome
-      return newState
+      newState.activeHome = action.activeHome;
+      return newState;
 
 
 

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import HomesIndex from './homes_index';
-import {fetchHomes} from '../../../actions/home_actions'
+import {fetchHomes} from '../../../actions/home_actions';
 
-const mapStateToProps = ({homes} ) => ({
+const mapStateToProps = ( {homes} ) => ({
   homes: homes.homes
 });
 

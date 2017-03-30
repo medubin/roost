@@ -14,8 +14,10 @@ class HomeShow extends React.Component {
   }
 
   render() {
-    console.log(this.state.activeHome);
-    return <div>TEST</div>
+    return <div>
+      {this.props.activeHome.name}
+      {this.props.activeHome.address}
+      </div>
   }
 
 }

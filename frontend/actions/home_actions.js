@@ -17,10 +17,11 @@ export const fetchHomes = () => dispatch => {
     .then(homes => dispatch(receiveHomes(homes)))
   };
 
-  export const fetchActiveHome = (id) => dispatch => (
+  export const fetchActiveHome = (id) => dispatch => {
     APIUtil.fetchActiveHome(id)
-    .then(activeHome => dispatch(receiveActiveHome))
-  );
+    // .then(activeHome => console.log(activeHome))
+    .then(activeHome => dispatch(receiveActiveHome(activeHome)))
+  };
 
 
 export const receiveHomes = (homes) => ({
