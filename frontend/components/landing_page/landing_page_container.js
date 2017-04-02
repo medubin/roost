@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import LandingPage from './landing_page';
 
-const mapStateToProps = ({ }) => ({
+const mapStateToProps = ({ session }) => ({
+  defaultHomeId: session.currentUser.default_home_id
 });
 
 const mapDispatchToProps = dispatch => ({
-  // showHomes: homes => dispatch()
+
 });
 
 export default connect(

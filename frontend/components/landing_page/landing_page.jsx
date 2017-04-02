@@ -1,12 +1,21 @@
 import React from 'react';
+import { Router,  hashHistory } from 'react-router'
 
 
-const LandingPage = () => (
-  <div className="landingPage">
+class LandingPage extends React.Component {
 
-    Welcome to Roost!
-  </div>
-);
+  componentWillMount() {
+    if (this.props.defaultHomeId) {
+      hashHistory.push('/homes/' + this.props.defaultHomeId);
+    }
+  }
+
+    render() {
+      return <div className="landingPage">
+        Welcome to Roost! {currentUser.username}
+      </div>
+    }
+}
 
 
 export default LandingPage;
