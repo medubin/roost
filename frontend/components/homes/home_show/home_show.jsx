@@ -4,9 +4,7 @@ import { Link, withRouter } from 'react-router';
 class HomeShow extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      activeHome: {}
-    };
+
   }
 
   componentWillMount() {
@@ -14,9 +12,10 @@ class HomeShow extends React.Component {
   }
 
   render() {
+    console.log(this.props.activeHome)
     return <div>
-      {this.props.activeHome.name}
-      {this.props.activeHome.address}
+      Name: {this.props.activeHome.name}
+      Address: {this.props.activeHome.address}
       </div>
   }
 

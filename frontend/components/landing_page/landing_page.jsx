@@ -12,7 +12,7 @@ class LandingPage extends React.Component {
 
     render() {
       return <div className="landingPage">
-        Welcome to Roost! {currentUser.username}
+        Welcome to Roost! {this.props.username}
       </div>
     }
 }

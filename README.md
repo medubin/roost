@@ -25,6 +25,5 @@ Things you may want to cover:
 # roost
 
 # TODO
-  - add default home
   - join home
   - invite to home

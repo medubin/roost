@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-$primary-color: #A239CA;
-$seconday-color: #4717F6;
-$primary-accent: #E7D4DD;
-$secondy-accent: #062F4F;
+$primary-color: #3D2645;
+$seconday-color: #4B4E6D;
+$primary-accent: #222222;
+$secondy-accent: #95A3B3;
 
 * {
   border-style: solid;
@@ -15,4 +15,27 @@ $secondy-accent: #062F4F;
 
 .header-group {
   color: $primary-color;
+}
+
+
+/* ================================================================================ */
+
+.header-group {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.header-item {
+  height: 100%;
+  align-self: auto;
+  text-align: center;
+  vertical-align: middle;
+  // position: relative;
+
+
+
+
 }
