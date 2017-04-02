@@ -12,6 +12,13 @@ class User < ApplicationRecord
   has_many :homes,
   through: :housemates
 
+  belongs_to :default_home,
+  class_name: "Home",
+  foreign_key: :default_home_id,
+  primary_key: :id
+
+
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return nil unless user && user.valid_password?(password)

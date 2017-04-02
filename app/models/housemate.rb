@@ -4,5 +4,4 @@ class Housemate < ApplicationRecord
 
   belongs_to :home
 
-
 end

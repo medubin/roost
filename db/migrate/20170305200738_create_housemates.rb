@@ -10,6 +10,6 @@ class CreateHousemates < ActiveRecord::Migration[5.0]
     add_index :housemates, :user_id
     add_index :housemates, :home_id
     add_index :housemates, [:user_id, :home_id], unique: true
-    
+
   end
 end
