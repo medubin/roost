@@ -1,14 +1,12 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(username: params[:id])
     if @user
       render "api/users/show"
     else
       render json: "User not found", status: 422
     end
-
-
   end
 
   def create

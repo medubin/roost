@@ -13,7 +13,7 @@ export const createHome = home => dispatch => (
   );
 
 export const fetchHomes = () => dispatch => {
-     APIUtil.fetchHomes()
+  APIUtil.fetchHomes()
     .then(homes => dispatch(receiveHomes(homes)))
   };
 

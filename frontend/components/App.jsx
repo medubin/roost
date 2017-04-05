@@ -13,7 +13,3 @@ const App = ({ children }) => (
 );
 
 export default App;
-
-// <Link to="/" className="header-link">
-  // <h1>Roost</h1>
-// </Link>

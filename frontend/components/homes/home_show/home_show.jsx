@@ -5,7 +5,6 @@ class HomeShow extends React.Component {
   constructor(props) {
     super(props)
     this.onClickJoinButton = this.onClickJoinButton.bind(this)
-    // this.renderJoinButton = this.renderJoinButton.bind(this)
   }
 
   componentWillMount() {
@@ -16,15 +15,20 @@ class HomeShow extends React.Component {
     if (this.props.activeHome.users == undefined) {
       return
     }
+
     let users = this.props.activeHome.users.map((user, key) => {
 
-      return <li key={key}>{user.username}</li>
+      return <li key={key}>
+        <Link to={`/users/${user.username}`}>
+          {user.username}
+        </Link>
+
+        </li>
     })
     return <ul>{users}</ul>
   }
 
   renderJoinButton() {
-    console.log(this.props)
     if (!this.props.activeHome.isHousemate) {
       return <div>
        <button onClick={this.onClickJoinButton}>JOIN HOME</button>
