@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :username, null: false
     	t.string :password_digest, null: false
     	t.string :session_token, null: false
-      t.integer :default_home_id, default: nil
+      t.integer :default_home_id, null: true, default: nil
       t.timestamps null: false
     end
 

@@ -21,3 +21,12 @@ export const fetchActiveHome = (id) => {
     url: 'api/homes/' + id
   });
 };
+
+export const joinHome = (homeId) => {
+  let data = {housemate: {home_id: homeId}}
+  return $.ajax ({
+    method: 'POST',
+    url: 'api/housemates/',
+    data: data
+  })
+}

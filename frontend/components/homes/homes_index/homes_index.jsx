@@ -15,7 +15,7 @@ class HomesIndex extends React.Component {
   }
 
 
-  populateHomes() {
+  renderHomes() {
     let homes = [];
     for(let key in this.props.homes) {
       homes.push(
@@ -33,7 +33,7 @@ class HomesIndex extends React.Component {
 
   render() {
     return <div>
-      {this.populateHomes()}
+      {this.renderHomes()}
     </div>
   }
 }

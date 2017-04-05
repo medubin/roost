@@ -30,6 +30,7 @@ class Api::HomesController < ApplicationController
 
   def show
     @home = Home.includes(:users, :housemates).find(params[:id])
+    @isHousemate = !Housemate.find_by(home_id: params[:id], user_id: current_user.id).nil?
     render "api/homes/show"
   end
 

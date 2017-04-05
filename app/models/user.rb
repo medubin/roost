@@ -13,6 +13,7 @@ class User < ApplicationRecord
   through: :housemates
 
   belongs_to :default_home,
+  optional: true,
   class_name: "Home",
   foreign_key: :default_home_id,
   primary_key: :id
