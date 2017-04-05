@@ -12,7 +12,6 @@ class Api::HousematesController < ApplicationController
 
       render "api/homes/show"
     end
-    puts @housemate.errors.full_messages
 
 
   end
