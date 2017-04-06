@@ -25,5 +25,4 @@ Things you may want to cover:
 # roost
 
 # TODO
-  - join home
   - invite to home

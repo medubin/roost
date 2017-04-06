@@ -42,7 +42,6 @@ class HomeShow extends React.Component {
   }
 
   render() {
-
     return <div>
       {this.renderJoinButton()}
       Name: {this.props.activeHome.name}
