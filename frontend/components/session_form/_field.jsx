@@ -10,7 +10,7 @@ class Field extends React.Component {
         <input type={this.props.type}
         value={this.props.value}
         onChange={this.props.update(this.props.field)}
-        className="login-input" />
+        className="validate" />
     );
   }
 }

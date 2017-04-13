@@ -14,8 +14,6 @@ class Greeting extends React.Component {
     this.props.logout()
     window.location.reload()
 
-    // hashHistory.push("/login")
-
   }
 
   render() {

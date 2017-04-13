@@ -15,6 +15,19 @@
  */
 
  @import "materialize/components/color";
- $primary-color: color("blue", "lighten-2") !default;
- $secondary-color: color("yellow", "base") !default;
+ $primary-color: color("deep-purple", "darken-4") !default;
+ $secondary-color: color("blue-grey", "base") !default;
  @import 'materialize';
+
+ .submit-button {
+  //  @extend .btn;
+  //  @extend .waves-effect;
+  //  @extend .waves-light;
+ }
+
+
+.user-input-field {
+  @extend .input-field;
+  @extend .col;
+  @extend .s6;
+}

@@ -77,35 +77,51 @@ class SessionForm extends React.Component {
 		let signUpOptions;
 		if (this.props.formType === 'signup') {
 			signUpOptions =
-			<div className="login-form">
-				<label> Retype Password:
-					<Field type='password' field='passwordCheck' value={this.state.passwordCheck} update={this.update.bind(this)}/>
-				</label>
-			</div>
+			<div className="row">
+        <div className="input-field col s6">
+					<input type='password'
+					value={this.state.passwordCheck}
+					onChange={this.update('passwordCheck')}
+					className="validate"
+ 					/>
+          <label for="passwordCheck">Retype Password</label>
+        </div>
+      </div>
 		}
 
 		return (
-			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
+			<div className="row">
+				<form onSubmit={this.handleSubmit} className="input-field col s6">
 					Welcome to Roost!
 					<br/>
 					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
 
-					<div className="login-form">
-						<label> Username:
-							<Field type='text' field='username' value={this.state.username} update={this.update.bind(this)}/>
-						</label>
+					<div className="row">
+						<div className="input-field col s6">
+							<input type='text'
+							value={this.state.username}
+							onChange={this.update('username')}
+							className="validate" />
+							<label for='username'> Username:
+							</label>
+						</div>
 					</div>
 
-					<div className="login-form">
-						<label> Password:
-							<Field type='password' field='password' value={this.state.password} update={this.update.bind(this)}/>
-						</label>
+					<div className="row">
+						<div className="input-field col s6">
+							<input type='password'
+							value={this.state.password}
+							onChange={this.update('password')}
+							className="validate"
+ 							/>
+							<label for='password'> Password:
+							</label>
+						</div>
 					</div>
 
 					{ signUpOptions }
-					<input type="submit" value="Submit" />
+					<input type="submit" value="Submit" className="btn waves-effect waves-light" />
 				</form>
 			</div>
 		);
