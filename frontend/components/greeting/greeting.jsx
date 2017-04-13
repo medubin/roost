@@ -34,7 +34,7 @@ class Greeting extends React.Component {
               <li><Link to='/homes/' className="header-item">Homes</Link></li>
               <li><a className="dropdown-button" href="#" data-activates="user-dropdown">{username}</a></li>
             </ul>
-  	       </div>
+  	      </div>
         </nav>
        )
      } else {

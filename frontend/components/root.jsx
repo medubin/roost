@@ -40,8 +40,8 @@ const Root = ({ store }) => {
            <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
            <Route path="/create-home" component={HomeFormContainer} onEnter={_ensureLoggedIn} />
            <Route path="/homes" component={HomesIndexContainer} onEnter={_ensureLoggedIn} />
-           <Route path="/homes/:homeId" component={HomeShowContainer} onEnter={_ensureLoggedIn} />
            <Route path="/users/:username" component={ProfileContainer} onEnter={_ensureLoggedIn} />
+           <Route path="/homes/:homeId" component={HomeShowContainer} onEnter={_ensureLoggedIn} />
 
          </Route>
        </Router>

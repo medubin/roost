@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import HomeSideNav from '../home_side_nav/home_side_nav_container'
 
 class HomeShow extends React.Component {
   constructor(props) {
@@ -42,14 +43,18 @@ class HomeShow extends React.Component {
   }
 
   render() {
-    return <div>
-      {this.renderJoinButton()}
-      Name: {this.props.activeHome.name}
-      <br/>
-      Address: {this.props.activeHome.address}
-      {this.renderUsers()}
-
+    return (
+      <div className="row">
+        <HomeSideNav />
+        <div className="col s12 m8 l9">
+          {this.renderJoinButton()}
+          Name: {this.props.activeHome.name}
+          <br/>
+          Address: {this.props.activeHome.address}
+          {this.renderUsers()}
+        </div>
       </div>
+    )
 
 
   }

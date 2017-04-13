@@ -16,3 +16,4 @@
 //= require materialize-sprockets
 //= require_tree .
 $(".dropdown-button").dropdown(true);
+$(".button-collapse").sideNav();

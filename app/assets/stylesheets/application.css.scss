@@ -20,9 +20,9 @@
  @import 'materialize';
 
  .submit-button {
-  //  @extend .btn;
-  //  @extend .waves-effect;
-  //  @extend .waves-light;
+   @extend .btn;
+   @extend .waves-effect;
+   @extend .waves-light;
  }
 
 
@@ -30,4 +30,11 @@
   @extend .input-field;
   @extend .col;
   @extend .s6;
+}
+
+.side-nav-home {
+  height: 100vh;
+  // margin-top: 100px;
+  // display: block;
+  // float: none;
 }
