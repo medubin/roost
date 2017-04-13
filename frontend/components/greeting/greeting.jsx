@@ -13,19 +13,26 @@ class Greeting extends React.Component {
 
     this.props.logout()
     window.location.reload()
-
   }
+
 
   render() {
     if(this.props.currentUser) {
       let username = this.props.currentUser.username;
       return (
         <nav>
+          <ul id="user-dropdown" className="dropdown-content">
+            <li><Link to={'/users/' + username} className="header-item">Profile</Link></li>
+            <li className="divider"></li>
+            <li><Link to="/login" className="header-item" onClick={this.logout}>Logout</Link></li>
+          </ul>
+
+
           <div className="nav-wrapper">
             <h2 className="brand-logo">Roost</h2>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-              <li><Link to={'/users/' + username} className="header-item">{username}!</Link></li>
-              <li><Link to="/login" className="header-item" onClick={this.logout}>log out</Link></li>
+              <li><Link to='/homes/' className="header-item">Homes</Link></li>
+              <li><a className="dropdown-button" href="#" data-activates="user-dropdown">{username}</a></li>
             </ul>
   	       </div>
         </nav>
