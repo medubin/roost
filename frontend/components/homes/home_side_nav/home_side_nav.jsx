@@ -11,13 +11,13 @@ class HomeSideNav extends React.Component {
     return (
       <div className="col s12 m4 l3">
         <div className="collection">
-          <a href='#' className="collection-item avatar">
+          <Link to={'/homes/' + this.props.activeHome.id} className="collection-item avatar">
             <i className="material-icons circle green">home</i>
             <span className="title">{this.props.activeHome.name}</span>
             <p>
               {this.props.activeHome.address}
             </p>
-        </a>
+        </Link>
       </div>
 
     </div>

@@ -1,5 +1,5 @@
 
-json.extract! @home, :name, :address
+json.extract! @home,  :id, :name, :address
 json.isHousemate @isHousemate
 
 json.users @home.housemates do |housemate|
