@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import HomeSideNav from './home_side_nav';
 
 
-const mapStateToProps = ({  }) => ({
-
+const mapStateToProps = ({  homes }) => ({
+  activeHome: homes.activeHome
 });
 
 const mapDispatchToProps = (dispatch) => ({
