@@ -7,7 +7,6 @@ class HomeSideNav extends React.Component {
   }
 
   render() {
-    console.log(this.props.activeHome)
     return (
       <div className="col s12 m4 l3">
         <div className="collection">
@@ -19,6 +18,18 @@ class HomeSideNav extends React.Component {
             </p>
         </Link>
       </div>
+
+      <div className="collection">
+        <Link to={'/homes/' + this.props.activeHome.id} className="collection-item avatar">
+          <i className="material-icons circle green">message</i>
+          <span className="title">Messages</span>
+          <p>
+            {"put number of unread messages here"}
+          </p>
+      </Link>
+    </div>
+
+
 
     </div>
     )
