@@ -57,16 +57,14 @@ class HomeShow extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <HomeSideNav />
-        <div className="col s12 m8 l9">
-          {this.renderJoinButton()}
-          Name: {this.props.activeHome.name}
-          <br/>
-          Address: {this.props.activeHome.address}
-          {this.renderUsers()}
-        </div>
+      <div className="col s12 m8 l9">
+        {this.renderJoinButton()}
+        Name: {this.props.activeHome.name}
+        <br/>
+        Address: {this.props.activeHome.address}
+        {this.renderUsers()}
       </div>
+
     )
 
   }

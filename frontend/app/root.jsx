@@ -13,6 +13,7 @@ import HomesIndex from '../home_index/components/homes_index'
 import HomeShow from '../home/components/home_show'
 import Profile from '../profile/components/profile'
 import Messages from '../messages/components/messages'
+import Home from '../home/home'
 
 
 const Root = ({ store }) => {
@@ -42,8 +43,10 @@ const Root = ({ store }) => {
            <Route path="/create-home" component={HomeForm} onEnter={_ensureLoggedIn} />
            <Route path="/homes" component={HomesIndex} onEnter={_ensureLoggedIn} />
            <Route path="/users/:username" component={Profile} onEnter={_ensureLoggedIn} />
-           <Route path="/homes/:homeId" component={HomeShow} onEnter={_ensureLoggedIn} />
-           <Route path="/homes/:homeId/messages" component={Messages} onEnter={_ensureLoggedIn} />
+           <Route path="/homes/:homeId" component={Home} onEnter={_ensureLoggedIn} >
+             <IndexRoute component={HomeShow}/>
+             <Route path="/homes/:homeId/messages" component={Messages} onEnter={_ensureLoggedIn} />
+           </Route>
 
          </Route>
        </Router>
