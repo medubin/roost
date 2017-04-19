@@ -4,7 +4,6 @@ class CreateHousemates < ActiveRecord::Migration[5.0]
       t.integer :user_id, null: false
       t.integer :home_id, null: false
       t.boolean :admin, null: false, default: false
-
       t.timestamps
     end
     add_index :housemates, :user_id

@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //Components
-import Root from './components/root';
+import Root from './app/root';
 
 //Store
-import configureStore from './store/store';
+import configureStore from './app/store';
 
 
 document.addEventListener('DOMContentLoaded', () => {
