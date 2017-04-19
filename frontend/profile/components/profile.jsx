@@ -1,4 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {fetchUser} from '../actions/user_actions';
+
+const mapStateToProps = ({ user }) => ({
+  user: user.user
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchUser: username => dispatch(fetchUser(username))
+});
+
 
 class Profile extends React.Component {
   constructor(props) {
@@ -14,4 +25,7 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile);

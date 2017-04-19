@@ -6,13 +6,13 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 // react components
 import App from './app'
-import SessionFormContainer from '../session/components/session_form_container'
-import LandingContainer from '../landing/landing_container'
-import HomeFormContainer from '../home_form/components/home_form_container'
-import HomesIndexContainer from '../home_index/components/homes_index_container'
-import HomeShowContainer from '../home/components/home_show_container'
-import ProfileContainer from '../profile/components/profile_container'
-import Messages from '../messages/components/messages_container'
+import SessionForm from '../session/components/session_form'
+import Landing from '../landing/landing'
+import HomeForm from '../home_form/components/home_form'
+import HomesIndex from '../home_index/components/homes_index'
+import HomeShow from '../home/components/home_show'
+import Profile from '../profile/components/profile'
+import Messages from '../messages/components/messages'
 
 
 const Root = ({ store }) => {
@@ -36,13 +36,13 @@ const Root = ({ store }) => {
     <Provider store={store}>
        <Router history={hashHistory}>
          <Route path="/" component={App}>
-           <IndexRoute component={LandingContainer} onEnter={_ensureLoggedIn} />
-           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-           <Route path="/create-home" component={HomeFormContainer} onEnter={_ensureLoggedIn} />
-           <Route path="/homes" component={HomesIndexContainer} onEnter={_ensureLoggedIn} />
-           <Route path="/users/:username" component={ProfileContainer} onEnter={_ensureLoggedIn} />
-           <Route path="/homes/:homeId" component={HomeShowContainer} onEnter={_ensureLoggedIn} />
+           <IndexRoute component={Landing} onEnter={_ensureLoggedIn} />
+           <Route path="/login" component={SessionForm} onEnter={_redirectIfLoggedIn} />
+           <Route path="/signup" component={SessionForm} onEnter={_redirectIfLoggedIn} />
+           <Route path="/create-home" component={HomeForm} onEnter={_ensureLoggedIn} />
+           <Route path="/homes" component={HomesIndex} onEnter={_ensureLoggedIn} />
+           <Route path="/users/:username" component={Profile} onEnter={_ensureLoggedIn} />
+           <Route path="/homes/:homeId" component={HomeShow} onEnter={_ensureLoggedIn} />
            <Route path="/homes/:homeId/messages" component={Messages} onEnter={_ensureLoggedIn} />
 
          </Route>

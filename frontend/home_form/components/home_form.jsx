@@ -1,5 +1,15 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import { connect } from 'react-redux';
+import {createHome} from '../actions/home_form_actions'
+
+const mapStateToProps = ({ }) => ({
+  errors: [] //TODO
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    createHome: home => dispatch(createHome(home))
+});
 
 class HomeForm extends React.Component {
 
@@ -61,4 +71,8 @@ class HomeForm extends React.Component {
   }
 }
 
-export default HomeForm;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeForm);

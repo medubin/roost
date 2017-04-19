@@ -1,6 +1,27 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Field from './_field'
+import { connect } from 'react-redux';
+import { login, logout, signup } from '../actions/session_actions';
+
+
+
+const mapStateToProps = ({ session }) => ({
+  loggedIn: Boolean(session.currentUser),
+  errors: session.errors
+});
+
+const mapDispatchToProps = (dispatch, { location }) => {
+  const formType = location.pathname.slice(1);
+  const processForm = (formType === 'login') ? login : signup;
+
+  return {
+    processForm: user => dispatch(processForm(user)),
+    formType
+  };
+};
+
+
 
 class SessionForm extends React.Component {
 	constructor(props) {
@@ -128,5 +149,9 @@ class SessionForm extends React.Component {
 	}
 
 }
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(SessionForm));
 
-export default withRouter(SessionForm);
+// export default withRouter(SessionForm);

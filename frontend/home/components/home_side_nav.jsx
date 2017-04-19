@@ -1,5 +1,14 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router';
+import React from 'react'
+import { Link, withRouter } from 'react-router'
+import { connect } from 'react-redux'
+
+const mapStateToProps = ({  home }) => ({
+  activeHome: home.activeHome
+});
+
+const mapDispatchToProps = (dispatch) => ({
+
+});
 
 class HomeSideNav extends React.Component {
   constructor(props) {
@@ -26,15 +35,16 @@ class HomeSideNav extends React.Component {
           <p>
             {"put number of unread messages here"}
           </p>
-      </Link>
-    </div>
-
-
-
+        </Link>
+      </div>
     </div>
     )
   }
 
 }
 
-export default HomeSideNav
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeSideNav)

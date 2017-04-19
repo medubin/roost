@@ -1,6 +1,15 @@
-import React from 'react';
+import React from 'react'
 import { Router,  hashHistory } from 'react-router'
+import { connect } from 'react-redux'
 
+const mapStateToProps = ({ session }) => ({
+  defaultHomeId: session.currentUser.default_home_id,
+  username: session.currentUser.username
+});
+
+const mapDispatchToProps = dispatch => ({
+
+});
 
 class Landing extends React.Component {
 
@@ -17,5 +26,7 @@ class Landing extends React.Component {
     }
 }
 
-
-export default Landing;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Landing);

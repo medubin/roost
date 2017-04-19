@@ -1,6 +1,19 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router';
-import HomeSideNav from './home_side_nav_container'
+import React from 'react'
+import { Link, withRouter } from 'react-router'
+import { connect } from 'react-redux'
+import HomeSideNav from './home_side_nav'
+import { fetchActiveHome, joinHome } from '../actions/home_actions'
+
+const mapStateToProps = ({ home }) => ({
+  activeHome: home.activeHome,
+
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchActiveHome: id => dispatch(fetchActiveHome(id)),
+    joinHome: homeId => dispatch(joinHome(homeId))
+})
+
 
 class HomeShow extends React.Component {
   constructor(props) {
@@ -56,9 +69,11 @@ class HomeShow extends React.Component {
       </div>
     )
 
-
   }
-
 }
 
-export default HomeShow
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeShow);

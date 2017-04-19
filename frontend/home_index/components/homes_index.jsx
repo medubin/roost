@@ -1,6 +1,15 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router';
+import React from 'react'
+import { Link, withRouter } from 'react-router'
+import { connect } from 'react-redux'
+import {fetchHomes} from '../actions/home_index_actions'
 
+const mapStateToProps = ( {homeIndex} ) => ({
+  homes: homeIndex.homes
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchHomes: () => dispatch(fetchHomes())
+});
 
 class HomesIndex extends React.Component {
   constructor(props) {
@@ -32,11 +41,15 @@ class HomesIndex extends React.Component {
 
 
   render() {
-    console.log(this.state)
+
     return <div>
       {this.renderHomes()}
     </div>
   }
 }
 
-export default HomesIndex;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomesIndex);
