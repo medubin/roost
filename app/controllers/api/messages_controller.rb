@@ -1,7 +1,13 @@
 class Api::MessagesController < ApplicationController
 
+  def index
+    @messages = Message.includes(:user).where(home_id: params[:home_id])
+    # debugger
+    render "api/messages/index"
+  end
+
   def create
-    debugger
+
     if (!current_user)
       render json: "User not found", status: 422
     end
@@ -13,12 +19,14 @@ class Api::MessagesController < ApplicationController
         render json: @message.errors.full_messages, status: 422
       end
 
+
+
   end
 
 
   private
   def message_params
-    params.permit(:home_id, :message)
+    params.require(:message).permit(:home_id, :message)
   end
 
 

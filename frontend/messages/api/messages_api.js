@@ -5,8 +5,15 @@ export const createMessage = (homeId, message) => {
     data: {
       message: {
         message: message,
-        home_id: home
+        home_id: homeId
       }
     }
+  })
+}
+
+export const fetchMessages = (homeId) => {
+  return $.ajax ({
+    method: 'GET',
+    url: 'api/homes/' + homeId + '/messages'
   })
 }

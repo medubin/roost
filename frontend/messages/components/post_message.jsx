@@ -5,7 +5,7 @@ import {createMessage} from '../actions/messages_actions'
 
 
 const mapStateToProps = ({ home }) => ({
-  homeId: home.id
+  homeId: home
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -32,7 +32,7 @@ class PostMessage extends React.Component {
 
   submitMessage(e) {
     e.preventDefault()
-
+    console.log(this.props)
     this.props.createMessage(1, this.state.message)
 
 

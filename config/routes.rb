@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :homes, only: [:create, :show, :index] do
-        resources :messages, only: [:create]
+        resources :messages, only: [:create, :index]
     end
     resources :housemates, only: [:create]
 
