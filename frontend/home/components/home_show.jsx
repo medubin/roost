@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, withRouter } from 'react-router'
 import { connect } from 'react-redux'
 import HomeSideNav from './home_side_nav'
-import { fetchActiveHome, joinHome } from '../actions/home_actions'
+import {joinHome } from '../actions/home_actions'
 
 const mapStateToProps = ({ home }) => ({
   activeHome: home.activeHome,
@@ -10,7 +10,7 @@ const mapStateToProps = ({ home }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchActiveHome: id => dispatch(fetchActiveHome(id)),
+
     joinHome: homeId => dispatch(joinHome(homeId))
 })
 
@@ -19,10 +19,6 @@ class HomeShow extends React.Component {
   constructor(props) {
     super(props)
     this.onClickJoinButton = this.onClickJoinButton.bind(this)
-  }
-
-  componentWillMount() {
-    this.props.fetchActiveHome(this.props.params.homeId)
   }
 
   renderUsers() {
@@ -50,6 +46,8 @@ class HomeShow extends React.Component {
        </div>
     }
   }
+
+
 
   onClickJoinButton() {
     this.props.joinHome(this.props.params.homeId)

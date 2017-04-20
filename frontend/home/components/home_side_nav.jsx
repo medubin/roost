@@ -7,13 +7,15 @@ const mapStateToProps = ({  home }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
+  fetchActiveHome: id => dispatch(fetchActiveHome(id)),
 });
 
 class HomeSideNav extends React.Component {
   constructor(props) {
     super(props)
   }
+
+
 
   render() {
     return (

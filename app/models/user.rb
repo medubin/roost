@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :housemates
 
+  has_many :messages
+
   has_many :homes,
   through: :housemates
 
