@@ -5,7 +5,7 @@ import {createMessage} from '../actions/messages_actions'
 
 
 const mapStateToProps = ({ home }) => ({
-  homeId: home
+  homeId: home.activeHome.id
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,7 +19,6 @@ class PostMessage extends React.Component {
     this.state = {
       message: ''
     }
-
     this.update = this.update.bind(this)
     this.submitMessage = this.submitMessage.bind(this)
   }
@@ -32,16 +31,18 @@ class PostMessage extends React.Component {
 
   submitMessage(e) {
     e.preventDefault()
-    console.log(this.props)
-    this.props.createMessage(1, this.state.message)
-
-
+    if (!this.state.message) {
+      return
+    }
+    this.props.createMessage(this.props.homeId, this.state.message)
+    this.setState({
+      message: ''
+    })
 
 
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="row">
         <form className="col s12 m8 l9">

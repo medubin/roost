@@ -23,13 +23,33 @@ class Messages extends React.Component {
   }
 
   renderMessages() {
-    return <div></div>
+    let messages = []
+
+    for(let key in this.props.messages) {
+      messages.push(
+        <li className='collection-item col s8' key={key}>
+          <div className='col s2'>
+            {this.props.messages[key]['user']}
+          </div>
+          <div className='col s6'>
+            {this.props.messages[key]['message']}
+          </div>
+        </li>
+      )
+    }
+
+    return messages
   }
 
   render() {
     return (
-      <PostMessage />
-      )
+      <div>
+        <ul className="collection col s8">
+          {this.renderMessages()}
+        </ul>
+          <PostMessage />
+      </div>
+    )
 
   }
 }
