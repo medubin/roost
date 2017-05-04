@@ -39,6 +39,16 @@ class HomeSideNav extends React.Component {
           </p>
         </Link>
       </div>
+
+      <div className="collection">
+        <Link to={'/homes/' + this.props.activeHome.id + '/messages'} className="collection-item avatar">
+          <i className="material-icons circle green">payment</i>
+          <span className="title">Bills</span>
+          <p>
+            Pay your bills!
+          </p>
+        </Link>
+      </div>
     </div>
     )
   }

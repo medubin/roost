@@ -31,7 +31,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="row">
-        <HomeSideNav />
+          <HomeSideNav />
         {this.props.children}
       </div>
   )
